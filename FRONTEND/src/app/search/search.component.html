@@ -1,0 +1,56 @@
+<div class="form-group">
+    <label for="github-search">Search for GitHub Users:</label>
+    <input
+      #input
+      id="github-search"
+      type="text"
+      class="form-control"
+      placeholder="GitHub Users"
+    />
+  
+    <!-- <div class="invalid-feedback" *ngIf="searchFailed">
+      Sorry, suggestions could not be loaded.
+    </div> -->
+  </div>
+  
+  <hr />
+  
+  <ul class="list-unstyled" *ngIf="model | async as response">
+    <li class="media" *ngFor="let user of response.items">
+      <img [src]="user.avatar_url" class="mr-3" alt="user.login" />
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">{{ user.login }}</h5>
+      </div>
+    </li>
+  </ul>
+  
+  <h1>
+    A Search example that gets Usernames and Avatars from the <code>GitHub</code>
+  </h1>
+  <ul class="list-group">
+    <li class="list-group-item">
+      1. <code>map</code> - To transform the <code>keyup</code> event into a text
+      that could be used for the search.
+    </li>
+    <li class="list-group-item">
+      2. <code>debounceTime</code> - To wait until x ms before doing something. So
+      if the user changes anything within those x ms, it won't be accounted for.
+    </li>
+    <li class="list-group-item">
+      3. <code>distinctUntilChanged</code> - To check if the value has actually
+      changed within x ms.
+    </li>
+    <li class="list-group-item">
+      4. <code>tap</code> - To set the loading state before actually making an API
+      call.
+    </li>
+    <li class="list-group-item">
+      5. <code>switchMap</code> - To switch the context of the Observable to the
+      result of the <code>http.get</code> call.
+    </li>
+    <li class="list-group-item">
+      6. <code>catchError</code> - To handle the errors coming in from API, just
+      in case there are any.
+    </li>
+  </ul>
+  

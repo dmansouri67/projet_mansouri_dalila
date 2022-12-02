@@ -1,0 +1,39 @@
+<div class="productTitle">
+  <h1>PRODUITS</h1>
+</div>
+
+<div class="catalogue-content">
+    <fieldset>
+        <legend>
+            PRODUITS
+        </legend>
+        
+       <table class="table">
+        <thead>
+          <tr>
+            <th>Race</th>
+            <th>Region</th>
+            <th>Taille</th>
+            <th>Poids Max</th>
+            <th>Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of catalogue$ | async ">
+            <td>{{c.race}}</td>
+            <td>{{c.region}}</td>
+            <td>{{c.taille}}</td>
+            <td>{{c.poidsMax}}kg</td>
+            <td>{{c.prix}}€</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+
+    <div class="container">
+        <div class="vertical-center">
+            <button class="btnFilterByPrice" (click)="filterByPrice(5000)">Uniquement les chats moins cher que 5000€</button>
+            <button class="btnAllProducts" (click)="allProducts()">Tous les chats</button>
+        </div>
+      </div>
+</div>

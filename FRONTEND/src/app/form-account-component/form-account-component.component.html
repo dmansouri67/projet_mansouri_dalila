@@ -1,0 +1,78 @@
+<div class="formTitle">
+    <h1>FORMULAIRE</h1>
+</div>
+
+
+<div>
+    <form>
+        <label for="firstname">First name (4 to 8 characters) : </label>
+        <input [(ngModel)]="firstname" type="text" id="firstname" name="firstname" required minlength="4" maxlength="8" size="10"><br>
+    
+        <label for="lastname">Last name (4 to 8 characters) : </label>
+        <input [(ngModel)]="lastname" type="text" id="lastname" name="lastname" required minlength="4" maxlength="8" size="10"><br>
+    
+        <label for="address">Address : </label>
+        <input [(ngModel)]="address" type="text" id="address" name="address"><br>
+        
+        <label for="postalCode">Postal code : </label>
+        <input appControlDirective="postalCode" [(ngModel)]="postalCode" type="integer" id="postalcode" name="postalCode" size="10" >
+
+        <label for="city">City : </label>
+        <input [(ngModel)]="city" type="text" id="city" name="city"><br>
+    
+        <label for="phoneNumber">Phone number : </label>
+        <input [(ngModel)]="phoneNumber" type="text" id="phoneNumber" name="phoneNumber"><br>
+    
+        <label for="email">Email : </label>
+        <input [(ngModel)]="email" type="text" id="email" name="email" placeholder="name@exemple.com"><br>
+    
+        <label for="civility">Civility : </label>
+        <input type="checkbox" id="civilityMen" name="civilityMen" >
+        <label for="men">Men</label>
+    
+        <input type="checkbox" id="civilityWoman" name="civilityWoman" >
+        <label for="woman">Woman</label><br>
+    
+        <label for="password">Password : </label>
+        <input type="password" id="password" name="password"><br>
+    
+        <label for="login">Login : </label>
+        <input type="text" id="login" name="login"><br>
+    </form>
+</div>
+
+<app-recap-component 
+    [prenom]="firstname" 
+    [nom]="lastname" 
+    [adresse]="address"
+    [codePostal]="postalCode"
+    [ville]="city"
+    [numTel]="phoneNumber"
+    [email]="email"
+    (change)="clicChange($event)">
+</app-recap-component>
+<br>
+
+
+<div class="recap-content">
+    <fieldset>
+        <legend>
+            RECAP
+        </legend>
+        {{recap}}
+    </fieldset>
+</div>
+
+
+<div class="pipe-content">
+    <fieldset>
+        <legend>
+            PIPES
+        </legend>
+        <p>{{phoneNumber | pipeFormat}}</p>
+        <p>{{firstname | titlecase}}   {{lastname | titlecase}}</p>
+    </fieldset>
+</div>
+
+
+
