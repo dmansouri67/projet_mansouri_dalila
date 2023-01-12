@@ -1,0 +1,55 @@
+[
+    {
+      "id" : 0,
+      "race": "Abyssin",
+      "region": "Asie",
+      "taille": "Moyenne",
+      "poidsMax": 5.5,
+      "prix": 700,
+      "description": "Ce chat bien musclé, bien qu il ne soit pas grand, a un corps long par rapport à la taille globale. L American Curl a des os de taille moyenne, ce n est donc pas un chat délicat malgré la longueur du corps.",
+      "image" : "https://img.20mn.fr/CtyO0tSaQJm91qp5K_R3_ik/1200x768_certains-pensent-que-l-abyssin-descend-des-chats-de-l-egypte-antique",
+      "image2" : "https://www.croquetteland.com/dw/image/v2/BHDX_PRD/on/demandware.static/-/Library-Sites-CQLSharedLibrary/default/dw3002117b/images/Blog/Articles/Chat/Race%20Abyssin/Origines_Abyssin.jpg"
+    },
+    {
+      "id" : 1,
+      "race": "American Curl",
+      "region": "Etats-Unis",
+      "taille": "Petite à moyenne",
+      "poidsMax": 5,
+      "prix":1100,
+      "image" : "https://www.thesprucepets.com/thmb/Y99J_MYo0vWhkYJQ-XyOZkK8hG8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/american-curl-full-profile-history-and-care-4705972-hero-2c9bdcfba3d84130b8eed233c46c19d3.jpg",
+      "image2" : "https://www.omlet.fr/images/cache/1024/682/American-curl-shorthaired-cat-lying-facing-forward.jpg"
+    },
+    {
+      "id" : 3,
+      "race": "Ashera",
+      "region": "Etats-Unis",
+      "taille": "Moyenne",
+      "poidsMax": 18,
+      "prix":110000,
+      "image" : "https://wamiz.com/media/cache/resolve/upload_original-size/article/images/bengal%20chat-content-60756725508f8-19791.jpg",
+      "image2" : "https://t1.ea.ltmcdn.com/fr/razas/1/2/8/ashera_821_0_600.jpg"
+    },
+    {
+      "id" : 4,
+      "race": "Savannah",
+      "region": "Etats-Unis",
+      "taille": "Grande",
+      "poidsMax": 30,
+      "prix":5000,
+      "image" : "https://www.botaneo.co/wp-content/uploads/2022/01/chat-savannah.jpg",
+      "image2" : "https://www.petsonic.com/blog/wp-content/uploads/2016/07/Serval-africano-gato-salvaje.jpg"
+    },
+    {
+      "id" : 5,
+      "race": "Bengal",
+      "region": "Etats-Unis",
+      "taille": "Moyenne",
+      "poidsMax": 7,
+      "prix":3000,
+      "image" : "https://www.monchat.ca/wp-content/uploads/2022/06/Liste-de-noms-pour-chats-Bengal.jpg", 
+      "image2" : "https://i.pinimg.com/736x/4d/ae/c1/4daec1ecd1b5eeed98c4b6fdeca2fff3--chat-bengal-bengal-cats.jpg"
+    }
+  ]
+
+  

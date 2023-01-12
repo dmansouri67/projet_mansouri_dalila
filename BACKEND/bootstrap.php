@@ -8,14 +8,17 @@ $conn;
 $isDevMode = false;
 
 $conn = array(
-    'host' => 'dpg-ceu7atun6mpglqbvtjq0-a',
+    'host' => '127.0.0.1',
     'driver' => 'pdo_pgsql',
-    'user' => 'catshop_bdd_user',
-    'password' => 'Fu6Q8S2STfxvbioHJc85kpkcqk3PI8w4',
-    'dbname' => 'catshop_bdd',
-    'port' => '5432'
+    'user' => 'root',
+    'password' => '',
+    'dbname' => 'cat\'shop_db',
+    'port' => '3306'
 );
 
 $config = Setup::createYAMLMetadataConfiguration(array(__DIR__ . "/config/yaml"), $isDevMode);
 $entityManager = EntityManager::create($conn, $config);
+
+
+
 
