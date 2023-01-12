@@ -8,7 +8,6 @@ import {delay, Observable, of, tap } from 'rxjs';
 export class AuthService {
 
   isLoggedIn: Boolean = false;
-  redirectUrl: string;
 
   login(name : string, password : string): Observable<boolean> {
     const isLoggedIn = (name == 'admin' && password == 'admin');

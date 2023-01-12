@@ -1,15 +1,21 @@
 <ul class="nav navbar-nav">
-    <li>
-        <a (click)="goToHome()">Acceuil</a>
+    <li class="menu-li">
+        <a (click)="goToHome()">Accueil</a>
     </li>
-    <li>
-        <a (click)="goToFormAccount()">Form Account</a>
+    <li class="menu-li">
+        <a (click)="goToProduct()">Nos chats</a>
+    </li >
+    <li class="menu-li">
+        <a (click)="searchGitUser()">Recherche</a>
     </li>
-    <li>
-        <a (click)="goToProduct()">Product</a>
+    <li class="menu-li">
+        <a (click)="goToCart()">Mon panier ({{productCount$ | async}})</a>
     </li>
-    <li>
-        <a (click)="searchGitUser()">Git Users</a>
+    <li class="menu-li">
+        <a (click)="goToFormAccount()">S'inscrire</a>
+    </li>
+    <li class="menu-li">
+        <a (click)="signOut()">Se déconnecter</a>
     </li>
 </ul>
 <router-outlet> </router-outlet>

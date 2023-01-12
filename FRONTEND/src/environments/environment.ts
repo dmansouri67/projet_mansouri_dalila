@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   catalogue: '/assets/mock/bouchonCatalogue.json',
-  api: 'https://webservice2-qcwd.onrender.com/api/',
+  apiUrl: 'https://catshop-project-final.onrender.com/api',
   name: 'default',
 };
 

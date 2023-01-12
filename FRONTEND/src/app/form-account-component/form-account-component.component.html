@@ -1,67 +1,81 @@
 <div class="formTitle">
-    <h1>FORMULAIRE</h1>
+    <h1>Formulaire d'inscription</h1>
 </div>
 
 
 <div>
-    <form>
-        <label for="firstname">First name (4 to 8 characters) : </label>
-        <input [(ngModel)]="firstname" type="text" id="firstname" name="firstname" required minlength="4" maxlength="8" size="10"><br>
-    
-        <label for="lastname">Last name (4 to 8 characters) : </label>
-        <input [(ngModel)]="lastname" type="text" id="lastname" name="lastname" required minlength="4" maxlength="8" size="10"><br>
-    
-        <label for="address">Address : </label>
-        <input [(ngModel)]="address" type="text" id="address" name="address"><br>
+    <form (ngSubmit)="onSubmit()">
+        <label for="firstname">Nom * (4 to 8 characters) : </label>
+        <input [(ngModel)]="firstname" onkeyup="this.value = this.value.toUpperCase()"  placeholder="Ton nom..." type="text" id="firstname" name="firstname" required minlength="4" maxlength="8" size="10"><br>
         
-        <label for="postalCode">Postal code : </label>
-        <input appControlDirective="postalCode" [(ngModel)]="postalCode" type="integer" id="postalcode" name="postalCode" size="10" >
+        <label for="lastname">Prénom * (4 to 8 characters) : </label>
+        <input [(ngModel)]="lastname" onkeyup="this.value = this.value.toUpperCase()" placeholder="Ton prénom..." type="text" id="lastname" name="lastname" required minlength="4" maxlength="8" size="10"><br>
+    
+        <label for="address">Adresse : </label>
+        <input [(ngModel)]="address" placeholder="Ton addresse..." type="text" id="address" name="address"><br>
+        
+        <label for="postalCode">Code postal : </label>
+        <input appControlDirective="postalCode" [(ngModel)]="postalCode" placeholder="Ton code postal..." type="integer" id="postalcode" name="postalCode" size="10" >
 
-        <label for="city">City : </label>
-        <input [(ngModel)]="city" type="text" id="city" name="city"><br>
+        <label for="city">Ville : </label>
+        <input [(ngModel)]="city" placeholder="Ta ville..." type="text" id="city" name="city"><br>
+        
+        <label for="city">Pays : </label>
+        <input [(ngModel)]="country" placeholder="Ton pays..." type="text" id="country" name="country"><br>
     
-        <label for="phoneNumber">Phone number : </label>
-        <input [(ngModel)]="phoneNumber" type="text" id="phoneNumber" name="phoneNumber"><br>
+        <label for="phoneNumber">Téléphone : </label>
+        <input [(ngModel)]="phoneNumber" placeholder="Ton numéro de téléphone..." type="text" id="phoneNumber" name="phoneNumber"><br>
     
-        <label for="email">Email : </label>
-        <input [(ngModel)]="email" type="text" id="email" name="email" placeholder="name@exemple.com"><br>
+        <label for="email">Email * : </label>
+        <input [(ngModel)]="email"  type="text" id="email" name="email" placeholder="name@exemple.com"><br>
+        <br>
+
+        <label for="email">Civilite : </label>
+        <input [(ngModel)]="civility" placeholder="M ou Mme..." type="text" id="civility" name="civility" ><br>
+        <br>
     
-        <label for="civility">Civility : </label>
-        <input type="checkbox" id="civilityMen" name="civilityMen" >
-        <label for="men">Men</label>
-    
-        <input type="checkbox" id="civilityWoman" name="civilityWoman" >
-        <label for="woman">Woman</label><br>
-    
-        <label for="password">Password : </label>
-        <input type="password" id="password" name="password"><br>
-    
-        <label for="login">Login : </label>
-        <input type="text" id="login" name="login"><br>
+        <label for="login">Login * : </label>
+        <input type="text" placeholder="Ton login..." id="login" name="login"><br>
+
+        <label for="password">Mot de passe * :</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Ton mot de passe..." >
+
+        <label for="password">Confirmation du mot de passe * :</label>
+        <input type="password" name="passwor2" id="password2" class="form-control" placeholder="Ton mot de passe..." >
+        <div >
+            <p >* Champs obligatoire</p>
+        </div>
+        <div>
+            <button type="submit" class="btn" >Envoyer</button>
+        </div>
     </form>
 </div>
 
-<app-recap-component 
-    [prenom]="firstname" 
-    [nom]="lastname" 
-    [adresse]="address"
-    [codePostal]="postalCode"
-    [ville]="city"
-    [numTel]="phoneNumber"
-    [email]="email"
-    (change)="clicChange($event)">
-</app-recap-component>
+
+<div *ngIf="showrecap"> 
+    <app-recap-component 
+        [prenom]="firstname" 
+        [nom]="lastname" 
+        [adresse]="address"
+        [codePostal]="postalCode"
+        [ville]="city"
+        [numTel]="phoneNumber"
+        [email]="email"
+        (change)="clicChange($event)">
+    </app-recap-component>
+</div>
+
 <br>
 
 
-<div class="recap-content">
+<!-- <div class="recap-content">
     <fieldset>
         <legend>
             RECAP
         </legend>
         {{recap}}
     </fieldset>
-</div>
+</div> -->
 
 
 <div class="pipe-content">

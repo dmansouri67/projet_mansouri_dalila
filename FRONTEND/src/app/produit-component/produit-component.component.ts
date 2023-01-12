@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import { of, from, interval, filter } from 'rxjs';
 import { map, tap, reduce, take } from 'rxjs/operators';
-import { ProduitService } from '../service/produit.service';
-import { Catalogue } from '../interface/catalogue';
+import { ProduitService } from 'src/app/service/produit.service';
+import { Catalogue } from 'src/app/interface/catalogue';
+import { AddProduit } from 'src/app/shared/state/cart-state';
+import { Store } from '@ngxs/store';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-produit-component',
@@ -12,9 +16,10 @@ import { Catalogue } from '../interface/catalogue';
 })
 export class ProduitComponentComponent implements OnInit {
 
-  constructor(public service : ProduitService) { }
+  constructor(private service : ProduitService, private store : Store, private route : Router) { }
   catalogue$? : Observable<Catalogue[]>;
 
+  
   ngOnInit(): void {
     this.catalogue$ = this.service.getCatalogue();
   }
@@ -28,5 +33,16 @@ export class ProduitComponentComponent implements OnInit {
   allProducts(){
     this.catalogue$ = this.service.getCatalogue();
   }
+
+  addProductToCart(product : Catalogue)
+  {
+    this.store.dispatch(new AddProduit(product));
+  }
+
+  detailsProduct(product : Catalogue){
+    this.route.navigate(['/details', product.id]);
+    
+  }
+
 
 }

@@ -24,7 +24,8 @@ export class ControlDirectiveDirective {
     }
     return true;
   }
-  @HostListener ('click') onclick(){
+
+  @HostListener('window:keydown.enter', ['$event']) keyEvent(event: KeyboardEvent) {
     if (!this.controlPostalCode(this.el.nativeElement.value))
     {
       this.el.nativeElement.style.background = 'red';
@@ -33,4 +34,13 @@ export class ControlDirectiveDirective {
       this.el.nativeElement.style.background = 'green';
     }
   }
+  // @HostListener ('keyPress') keyPress (){
+  //   if (!this.controlPostalCode(this.el.nativeElement.value))
+  //   {
+  //     this.el.nativeElement.style.background = 'red';
+  //   }
+  //   else{
+  //     this.el.nativeElement.style.background = 'green';
+  //   }
+  // }
 }

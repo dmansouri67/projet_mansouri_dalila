@@ -1,4 +1,4 @@
-<div class="productTitle">
+<!-- <div class="productTitle">
   <h1>PRODUITS</h1>
 </div>
 
@@ -16,6 +16,8 @@
             <th>Taille</th>
             <th>Poids Max</th>
             <th>Prix</th>
+            <th>+</th>
+            <th>Details</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +27,12 @@
             <td>{{c.taille}}</td>
             <td>{{c.poidsMax}}kg</td>
             <td>{{c.prix}}€</td>
+            <td>
+              <button (click) = "addProductToCart(c)" type = "button"> + </button>
+            </td>
+            <td>
+              <button (click) = "detailsProduct(c)" type = "button"> ... </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -36,4 +44,41 @@
             <button class="btnAllProducts" (click)="allProducts()">Tous les chats</button>
         </div>
       </div>
+</div> -->
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+<div class="container">
+    <h3 class="h3">Cat'Shop ! </h3>
+    <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let c of catalogue$ | async ">
+            <div class="product-grid2">
+                <div class="product-image2" style = "height: 210px;">
+
+                    <button style = "border:0;" (click)="detailsProduct(c)">
+                        <img class="pic-1" src={{c.image}}>
+                        <img class="pic-2" src={{c.image2}}>
+                    </button>
+                    <ul class="social">
+                        <li><button style = "border:0;" data-tip="Details" (click)="detailsProduct(c)"><i class="fa fa-eye"></i></button> </li>
+                        <li><button style = "border:0;" data-tip="Add to Cart" (click)="addProductToCart(c)"><i class="fa fa-shopping-cart"></i></button></li>
+                    </ul>
+                    <button class="add-to-cart" (click) = "addProductToCart(c)" >Ajouter au panier</button>
+                </div>
+                <div class="product-content">
+                    <h3 class="title">{{c.race}}</h3>
+                    <span class="price">{{c.prix}} €</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+

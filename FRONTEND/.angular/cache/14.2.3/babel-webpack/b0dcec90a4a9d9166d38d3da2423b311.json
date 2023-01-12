@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  catalogue: '/assets/mock/bouchonCatalogue.json',\n  apiUrl: 'https://catshop-project-final.onrender.com/api'\n};","map":null,"metadata":{},"sourceType":"module"}

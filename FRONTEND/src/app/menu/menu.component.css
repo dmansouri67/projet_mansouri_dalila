@@ -8,7 +8,7 @@
    
     color: white;
   }
-li{
+.menu-li{
     margin-right: 20px;
     margin-left: 20px;
     list-style: none;
@@ -19,12 +19,12 @@ li{
     text-decoration: none;
     font-size: 20px;
   }
-  li:hover{
+  .menu-li:hover{
     background-color: #f2f2f2;
     color: black;
     cursor: pointer;
   }
-  .active{
+  .menu-li .active{
     background-color: #f2f2f2;
     color: black;
   }

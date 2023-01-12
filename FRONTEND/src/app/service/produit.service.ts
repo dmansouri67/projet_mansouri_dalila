@@ -19,5 +19,7 @@ export class ProduitService {
 
   getCatalogue() : Observable<Catalogue[]>{
     return this.http.get<Catalogue[]>(this.env.catalogue);
-  } 
+  }
+  
+
 }

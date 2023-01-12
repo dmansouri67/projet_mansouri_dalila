@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { CartState } from 'src/app/shared/state/cart-state';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +12,11 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @Select(CartState.getNbProduits) productCount$: Observable<number>;
+
+  auth : AuthService ;
+  constructor(private router: Router, private authService : AuthService) { }
+
 
   goToHome() {
     this.router.navigate(['home']);
@@ -27,7 +35,18 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['search']);
   }
 
+  goToCart(){
+    this.router.navigate(['cart']);
+  }
+
+  signOut()
+  {
+    this.auth.logout();
+    this.router.navigate(['login']);
+  }
+
   ngOnInit(): void {
+    this.auth = this.authService;
   }
 
 }
